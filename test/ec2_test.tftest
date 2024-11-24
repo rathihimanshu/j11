@@ -1,0 +1,26 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 4.0"
+    }
+  }
+}
+
+module "ec2_instance" {
+  source = "../" # Root module
+}
+
+describe "aws_instance.example" {
+  it "should be present" {
+    assert that resource "aws_instance.example" is present
+  }
+
+  it "should have the correct instance type" {
+    assert that resource "aws_instance.example" has attribute "instance_type" equal to "t2.micro"
+  }
+
+  it "should have the correct name tag" {
+    assert that resource "aws_instance.example" has attribute "tags.Name" equal to "TestEC2Instance"
+  }
+}
