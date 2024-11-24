@@ -2,7 +2,7 @@
 
 
 run "aws_instance_unit" {
-  
+
   command = plan
 
   # Assertions to validate the test conditions
@@ -22,7 +22,7 @@ run "aws_instance_unit" {
   # }
 }
 run "aws_instance_integration" {
-  
+
   command = apply
 
   # Assertions to validate the test conditions
