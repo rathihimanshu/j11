@@ -1,6 +1,7 @@
 provider "aws" {
   region = "us-east-1"
 }
+#jfjf
 
 resource "aws_instance" "example" {
   ami           = "ami-0453ec754f44f9a4a" 
